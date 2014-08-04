@@ -6,11 +6,12 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      background: #111;
     }
 
     main {
       height: 600px;
-      width: 600px;
+      width: 450px;
     }
 
     iframe {
@@ -33,11 +34,11 @@
       buying: false,
       auto_play: false,
       show_artwork: true,
-      show_comments: true,
+      show_comments: false,
       show_playcount: true,
       show_user: true,
       liking: false,
-      visual: false
+      visual: false,
     };
 
     SC.oEmbed(playlist, options, function(oEmbed) {
