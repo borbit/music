@@ -1,0 +1,50 @@
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    main {
+      height: 600px;
+      width: 600px;
+    }
+
+    iframe {
+      height: 100% !important;
+      width: 100% !important;
+    }
+  </style>
+</head>
+<body>
+  <main></main>
+  <script src="http://connect.soundcloud.com/sdk.js"></script>
+  <script>
+    SC.initialize({
+      client_id: '74bc0bfbafb8e9208239996f0d64ea24'
+    });
+
+    var viewport = document.querySelector('main');
+    var playlist = 'https://soundcloud.com/sergeborbit/sets/playlist';
+    var options = {
+      buying: false,
+      auto_play: false,
+      show_artwork: true,
+      show_comments: true,
+      show_playcount: true,
+      show_user: true,
+      liking: false,
+      visual: false
+    };
+
+    SC.oEmbed(playlist, options, function(oEmbed) {
+      viewport.innerHTML = oEmbed.html;
+    });
+  </script>
+</body>
+</html>
+
+
